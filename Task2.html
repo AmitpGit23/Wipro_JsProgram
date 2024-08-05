@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+    <style>
+        #container {
+            font-size: 60px;
+            color: black;
+            text-align: center;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        Original Text        
+    </div>
+
+    <script>
+        
+        function showMessage() {
+            const messageDiv = document.getElementById('container')
+            // messageDiv.textContent = 'This is change Text';
+            messageDiv.setTimeout(()=> {
+                'time up';
+            },2000);
+
+        }
+        
+        // Change the text color of the element every 2 seconds
+        const colors = ['red', 'green', 'blue', 'orange', 'purple'];
+        let colorIndex = 0;
+        setInterval(() => {
+            container.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }, 2000);
+
+        setTimeout(showMessage, 2000);
+    </script>
+</body>
+</html>
