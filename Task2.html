@@ -14,20 +14,18 @@
     </style>
 </head>
 <body>
-    <div id="container">
-        Original Text        
+    <div id="container">original Text     
     </div>
+    <div id="message"></div>
 
     <script>
         
         function showMessage() {
-            const messageDiv = document.getElementById('container')
-            // messageDiv.textContent = 'This is change Text';
-            messageDiv.setTimeout(()=> {
-                'time up';
-            },2000);
-
+            const messageDiv = document.getElementById('container');
+            messageDiv.textContent = 'This message appears after 2 seconds!';
         }
+
+        setTimeout(showMessage, 3000);
         
         // Change the text color of the element every 2 seconds
         const colors = ['red', 'green', 'blue', 'orange', 'purple'];
