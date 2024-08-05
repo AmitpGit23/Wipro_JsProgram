@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script sc="task1.js"></script> -->
+
+    <style>
+        form {
+            max-width: 300px;
+            margin: auto;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+        label {
+            margin-bottom: 3px;
+            color: #333333;
+            display: block;
+        }
+        input {
+            border: 1px solid #ccc;
+            padding: 4px;
+            font-size: 10x;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 5px ;
+            color: #fff;
+            align-items:  center;
+            background-color: #007BFF;
+            border: 2px solid black;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        #jsonOutput{
+            text-align: center;
+            color: green;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <form id="registrationForm">
+        <h2>Register</h2>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="City">City:
+            <input type="text" id="city" name="city" required></label>
+        </div>
+        <div>
+            <label for="DOB">DOB
+            <input type="date" id="dob" name="dob" required></label>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        
+        <div>
+            <button type="submit">Submit</button> <button type="reset">Reset</button>
+        </div>
+        
+    </form>
+
+
+    <div id="jsonOutput">Register</div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                city: formData.get('city'),
+                Dob: formData.get('dob'),
+                email: formData.get('email'),
+                password: formData.get('password')
+            };
+
+            const jsonData = JSON.stringify(data, null, 2); 
+            document.getElementById('jsonOutput').textContent = jsonData;
+
+            console.log(jsonData)
+        });
+    </script>
+    
+</body>
+</html>
