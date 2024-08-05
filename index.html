@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function btnClick ()
+        {
+            alert ("button is clicked")
+        }
+        function myHeading()
+        {
+            document.getElementById("heading").onmouseover= function()
+            {
+                document.getElementById("heading").style.color="red";
+            }
+        }
+        function myHeading2()
+        {
+            document.getElementById("heading").onmouseout= function()
+            {
+                document.getElementById("heading").style.color="black";
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <div>
+        <h1 style="width:300px; height: 100px;" id="heading" onmouseout="myHeading2()" onmouseover="myHeading()">This is a heading.</h1>
+
+    </div>    
+    <button id="myBtn" onclick="btnClick()">click me</button>
+    
+</body>
+</html> 
